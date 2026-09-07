@@ -31,9 +31,9 @@ npm run lint    # ESLint
 | Archivo | Qué cambia |
 | --- | --- |
 | `src/data/site.ts` | Nombre, tagline, correo y WhatsApp |
-| `src/data/empresas.ts` | Directorio de empresas (nombre, sector, ciudad, sitio, contacto) |
+| `src/data/empresas.ts` | Directorio de empresas (nombre, sector, presencia, ciudad, sitio, correo, teléfono) |
 
-El directorio actual tiene entradas de ejemplo, sin contactos reales. Sustitúyelas por el listado investigado cuando esté listo.
+El directorio es un listado inicial de 35 empresas. Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
 
 Opcional: define la URL canónica del sitio.
 
