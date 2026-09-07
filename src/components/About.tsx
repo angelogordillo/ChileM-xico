@@ -13,7 +13,7 @@ export function About() {
     >
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-clay">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-mexico-green">
             Quiénes somos
           </p>
           <h2

@@ -2,18 +2,47 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-export function LogoMark({ className }: { className?: string }) {
+export function LogoMark({
+  className,
+  idPrefix = "logo",
+}: {
+  className?: string;
+  idPrefix?: string;
+}) {
+  const clipId = `${idPrefix}-mark-clip`;
+
   return (
     <svg
-      viewBox="0 0 40 40"
+      viewBox="0 0 48 32"
       className={className}
-      aria-hidden="true"
-      fill="none"
+      role="img"
+      aria-label="Banderas de Chile y México"
     >
-      <rect width="40" height="40" rx="12" className="fill-wine" />
-      <path d="M7.5 28 20 10.5 32.5 28H7.5Z" className="fill-foam" />
-      <circle cx="20" cy="14" r="3.6" className="fill-gold" />
-      <rect x="8" y="30" width="24" height="2.4" rx="1.2" className="fill-navy" />
+      <defs>
+        <clipPath id={clipId}>
+          <rect width="48" height="32" rx="8" />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${clipId})`}>
+        <rect width="24" height="32" fill="#D52B1E" />
+        <rect width="24" height="16" fill="#FFFFFF" />
+        <rect width="16" height="16" fill="#0039A6" />
+        <polygon
+          fill="#FFFFFF"
+          points="8,4.1 9.15,7.65 12.9,7.65 9.88,9.85 11.03,13.4 8,11.2 4.97,13.4 6.12,9.85 3.1,7.65 6.85,7.65"
+        />
+        <rect x="24" width="8" height="32" fill="#006847" />
+        <rect x="32" width="8" height="32" fill="#FFFFFF" />
+        <rect x="40" width="8" height="32" fill="#CE1126" />
+        <g transform="translate(36 17.2)">
+          <rect x="-0.45" y="0" width="0.9" height="3.6" fill="#006847" />
+          <ellipse cx="0" cy="-0.35" rx="1.35" ry="1.5" fill="#006847" />
+          <path
+            fill="#5C3A1E"
+            d="M0-3.1c.85.15 1.5.9 1.65 1.7.9.15 1.1.75 1.1.75-.7.2-1.15.1-1.4 0 .15.55.05 1.05-.2 1.4l1 .75c.1.4-.15.65-.6.5L.75 1.4C.55 1.85.25 2.15 0 2.35.25 2.15-.05 1.85-.25 1.4L-1.55 2c-.45.15-.7-.1-.6-.5l1-.75c-.25-.35-.35-.85-.2-1.4-.25.1-.7.2-1.4 0 0 0 .2-.6 1.1-.75.15-.8.8-1.55 1.65-1.7Z"
+          />
+        </g>
+      </g>
     </svg>
   );
 }
@@ -158,30 +187,50 @@ export function SunMountains({ className }: { className?: string }) {
       viewBox="0 0 640 420"
       className={className}
       role="img"
-      aria-label="Ilustración de montañas andinas y un sol cálido"
+      aria-label="Ilustración de montañas con los colores de las banderas de Chile y México"
     >
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f3d7b4" />
-          <stop offset="55%" stopColor="#f6e7d2" />
-          <stop offset="100%" stopColor="#efe0cc" />
+        <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#0039A6" />
+          <stop offset="42%" stopColor="#4d78c4" />
+          <stop offset="100%" stopColor="#f4ece0" />
         </linearGradient>
-        <linearGradient id="sunGlow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f0c14b" />
-          <stop offset="100%" stopColor="#c4622d" />
-        </linearGradient>
+        <clipPath id="hero-frame">
+          <rect width="640" height="420" rx="28" />
+        </clipPath>
       </defs>
-      <rect width="640" height="420" rx="28" fill="url(#sky)" />
-      <circle cx="470" cy="128" r="58" fill="url(#sunGlow)" opacity="0.95" />
-      <circle cx="470" cy="128" r="86" fill="#c9a04a" opacity="0.16" />
-      <path d="M0 292 148 168l92 86 86-128 118 150 76-74 120 90v128H0Z" fill="#17324f" />
-      <path d="M0 330 168 214l78 72 80-98 102 118 70-58 142 72v100H0Z" fill="#9b1d2e" />
-      <path
-        d="M0 368c48-22 96-40 148-28 62 14 86 40 148 28 70-14 92-46 156-34 58 10 94 38 188 22v64H0Z"
-        fill="#c4622d"
-        opacity="0.9"
-      />
-      <path d="M0 398h640v22H0Z" fill="#1c1614" opacity="0.12" />
+      <g clipPath="url(#hero-frame)">
+        <rect width="640" height="420" fill="url(#hero-sky)" />
+        <polygon
+          fill="#FFFFFF"
+          points="470,58 486,108 540,108 496,139 512,190 470,160 428,190 444,139 400,108 454,108"
+          opacity="0.95"
+        />
+        <path d="M0 292 148 168l92 86 86-128 118 150 76-74 120 90v128H0Z" fill="#0039A6" />
+        <path d="M0 330 168 214l78 72 80-98 102 118 70-58 142 72v100H0Z" fill="#D52B1E" />
+        <path
+          d="M0 368c48-22 96-40 148-28 62 14 86 40 148 28 70-14 92-46 156-34 58 10 94 38 188 22v64H0Z"
+          fill="#006847"
+        />
+        <g transform="translate(78 318)">
+          <rect width="42" height="28" fill="#D52B1E" />
+          <rect width="42" height="14" fill="#FFFFFF" />
+          <rect width="14" height="14" fill="#0039A6" />
+          <polygon
+            fill="#FFFFFF"
+            points="7,3.2 8.05,6.5 11.5,6.5 8.72,8.5 9.77,11.8 7,9.8 4.23,11.8 5.28,8.5 2.5,6.5 5.95,6.5"
+          />
+          <rect x="-3" y="28" width="3" height="36" fill="#1c1614" />
+        </g>
+        <g transform="translate(132 326)">
+          <rect width="42" height="28" fill="#FFFFFF" />
+          <rect width="14" height="28" fill="#006847" />
+          <rect x="28" width="14" height="28" fill="#CE1126" />
+          <rect x="20.3" y="14" width="1.4" height="7" fill="#006847" />
+          <ellipse cx="21" cy="13.2" rx="2.4" ry="2.6" fill="#006847" />
+          <rect x="-3" y="28" width="3" height="28" fill="#1c1614" />
+        </g>
+      </g>
     </svg>
   );
 }
