@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LogoMark } from "@/components/Icons";
 
 export default function NotFound() {
@@ -11,12 +12,12 @@ export default function NotFound() {
         Puede que el enlace esté viejo o que hayamos cambiado la casa de
         lugar. Volvamos al inicio.
       </p>
-      <a
+      <Link
         href="/"
         className="mt-8 inline-flex h-12 items-center rounded-full bg-wine px-6 text-sm font-semibold text-foam hover:bg-wine-deep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
       >
         Ir a Chile en México
-      </a>
+      </Link>
     </div>
   );
 }
