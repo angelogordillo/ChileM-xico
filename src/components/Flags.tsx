@@ -104,7 +104,10 @@ export function FlagPair({
           </figcaption>
         ) : null}
       </figure>
-      <span className={`h-5 w-px ${rule}`} aria-hidden="true" />
+      <span
+        className={`${size === "xl" ? "h-10" : "h-5"} w-px ${rule}`}
+        aria-hidden="true"
+      />
       <figure className="flex items-center gap-2">
         <FlagMexico
           idPrefix={`${idPrefix}-mx`}
