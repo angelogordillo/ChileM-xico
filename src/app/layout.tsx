@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — comunidad chilena en México`,
+    default: `${site.name} — comunidad y empresas`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -26,13 +26,12 @@ export const metadata: Metadata = {
     "Chile",
     "México",
     "comunidad chilena",
+    "empresas chilenas",
     "CDMX",
-    "eventos",
     "chilenos en México",
-    "Fiestas Patrias",
   ],
   openGraph: {
-    title: `${site.name} — comunidad y eventos`,
+    title: `${site.name} — comunidad y empresas`,
     description: site.description,
     locale: site.locale,
     type: "website",

@@ -1,8 +1,8 @@
 # Chile en México
 
-Sitio de la comunidad chilena en México: eventos, encuentro y vida en común.
+Sitio mínimo de la comunidad chilena en México: comunidad y empresas.
 
-Landing page en español (es-MX), hecha con Next.js (App Router), TypeScript y Tailwind CSS.
+Hecho con Next.js (App Router), TypeScript y Tailwind CSS. Idioma: español (es-MX).
 
 ## Requisitos
 
@@ -28,18 +28,12 @@ npm run lint    # ESLint
 
 ## Cómo actualizar el contenido
 
-El texto y los datos de ejemplo viven en archivos fáciles de editar:
-
 | Archivo | Qué cambia |
 | --- | --- |
-| `src/data/site.ts` | Nombre, tagline, correo, WhatsApp y redes |
-| `src/data/events.ts` | Tarjetas de eventos próximos |
+| `src/data/site.ts` | Nombre, tagline, correo y WhatsApp |
+| `src/data/empresas.ts` | Directorio de empresas (nombre, sector, presencia, ciudad, sitio, correo, teléfono) |
 
-Reemplaza los placeholders antes de un lanzamiento público:
-
-- Correo: `hola@chileenmexico.example`
-- WhatsApp: `https://wa.me/000000000000`
-- Instagram / Facebook: URLs de ejemplo en `site.social`
+El directorio es un listado inicial de 35 empresas. Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
 
 Opcional: define la URL canónica del sitio.
 
@@ -49,21 +43,7 @@ NEXT_PUBLIC_SITE_URL=https://tu-dominio.com
 
 ## Despliegue
 
-El proyecto es una app Next.js estándar.
-
 1. Sube el repositorio a GitHub.
-2. Impórtalo en [Vercel](https://vercel.com) (o Netlify, Cloudflare Pages u otro host compatible con Next.js).
-3. Framework preset: **Next.js**. Comando de build: `npm run build`.
-4. Configura `NEXT_PUBLIC_SITE_URL` con el dominio final.
-5. Actualiza correo, WhatsApp y redes en `src/data/site.ts`.
-
-## Estructura
-
-```
-src/
-  app/          # layout, página única, SEO
-  components/   # secciones de la landing
-  data/         # contenido editable
-```
-
-La navegación usa anclas (`#eventos`, `#unirse`, etc.) con desplazamiento suave.
+2. Impórtalo en [Vercel](https://vercel.com) (u otro host compatible con Next.js).
+3. Framework preset: **Next.js**. Build: `npm run build`.
+4. Configura `NEXT_PUBLIC_SITE_URL` y actualiza los placeholders en `src/data/site.ts`.
