@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4ece0;
+  --background: #faf9f6;
   --foreground: #1c1614;
   --chile-red: #d52b1e;
   --chile-red-deep: #b22218;
   --chile-blue: #0039a6;
   --mexico-green: #006847;
-  --mexico-green-deep: #005338;
   --mexico-red: #ce1126;
   --flag-white: #ffffff;
 }
@@ -15,41 +14,29 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-cream: #f4ece0;
-  --color-linen: #e7dccb;
-  --color-foam: #fff8f0;
+  --color-cream: #faf9f6;
+  --color-paper: #ffffff;
   --color-ink: #1c1614;
-  --color-ink-soft: #5a4e46;
+  --color-ink-soft: #5c564f;
+  --color-line: #e6e2da;
   --color-chile-red: var(--chile-red);
   --color-chile-red-deep: var(--chile-red-deep);
   --color-chile-blue: var(--chile-blue);
   --color-mexico-green: var(--mexico-green);
-  --color-mexico-green-deep: var(--mexico-green-deep);
   --color-mexico-red: var(--mexico-red);
   --color-flag-white: var(--flag-white);
-  --color-wine: var(--chile-red);
-  --color-wine-deep: var(--chile-red-deep);
-  --color-navy: var(--chile-blue);
-  --color-forest: var(--mexico-green);
-  --color-clay: var(--mexico-red);
-  --color-gold: #f4ede0;
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .reveal,
-  .reveal-delay {
-    animation: none !important;
   }
 }
 
@@ -60,78 +47,6 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--chile-red) 22%, white);
+  background: color-mix(in srgb, var(--chile-red) 18%, white);
   color: var(--color-ink);
-}
-
-.grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-}
-
-.chile-bar {
-  background: linear-gradient(
-    90deg,
-    var(--chile-blue) 0 33.33%,
-    var(--flag-white) 33.33% 66.66%,
-    var(--chile-red) 66.66%
-  );
-}
-
-.mexico-bar {
-  background: linear-gradient(
-    90deg,
-    var(--mexico-green) 0 33.33%,
-    var(--flag-white) 33.33% 66.66%,
-    var(--mexico-red) 66.66%
-  );
-}
-
-.tricolor {
-  background: linear-gradient(
-    90deg,
-    var(--chile-blue) 0 16.66%,
-    var(--flag-white) 16.66% 33.33%,
-    var(--chile-red) 33.33% 50%,
-    var(--mexico-green) 50% 66.66%,
-    var(--flag-white) 66.66% 83.33%,
-    var(--mexico-red) 83.33%
-  );
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal {
-  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.reveal-delay {
-  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-}
-
-.card-lift {
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 16px 40px -24px rgb(28 22 20 / 0.35),
-    0 0 0 1px rgb(28 22 20 / 0.04);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card-lift:hover {
-    transform: none;
-  }
 }

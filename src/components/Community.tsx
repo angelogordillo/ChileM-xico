@@ -1,65 +1,44 @@
-const benefits = [
-  {
-    title: "Bienvenida de verdad",
-    body: "Si acabas de llegar, te ayudamos a aterrizar: barrio, trámites, escuela, trabajo y con quién tomar el primer café.",
-    span: "md:col-span-2",
-  },
-  {
-    title: "Tips de la vida acá",
-    body: "Dónde encontrar merquén, cómo abrir una cuenta y qué hacer cuando extrañas el mar.",
-  },
-  {
-    title: "Cultura viva",
-    body: "Cocinamos, bailamos cueca, armamos fonda y celebramos Navidad y Año Nuevo como en casa.",
-  },
-  {
-    title: "Amistad, no solo un chat",
-    body: "El grupo es la puerta. Lo que importa pasa en la mesa, en el parque y en los cumpleaños.",
-  },
-  {
-    title: "Puente Chile–México",
-    body: "También somos casa para mexicanas y mexicanos que quieren conocer Chile desde cerca.",
-  },
-];
+import { site } from "@/data/site";
 
 export function Community() {
   return (
     <section
       id="comunidad"
-      className="border-t border-ink/8 bg-navy text-foam"
-      aria-labelledby="community-title"
+      className="border-t border-line px-6"
+      aria-labelledby="comunidad-title"
     >
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
-        <div className="max-w-2xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-foam">
-            Comunidad
-          </p>
-          <h2
-            id="community-title"
-            className="font-display text-4xl tracking-tight sm:text-5xl"
+      <div className="mx-auto max-w-2xl py-20 sm:py-24">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-chile-red">
+          Comunidad
+        </p>
+        <h2
+          id="comunidad-title"
+          className="mt-4 font-display text-3xl tracking-tight text-ink sm:text-4xl"
+        >
+          Un lugar para encontrarnos.
+        </h2>
+        <p className="mt-6 text-base leading-8 text-ink-soft">
+          Chile en México es una comunidad abierta para quienes viven acá, para
+          quienes acaban de llegar y para quien se siente cerca de ambas
+          culturas. Nos escribimos, nos recomendamos y nos juntamos cuando hay
+          ganas de mesa compartida.
+        </p>
+        <div className="mt-10 flex flex-col gap-3 text-sm sm:flex-row sm:gap-8">
+          <a
+            href={site.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-mexico-green underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mexico-green"
           >
-            Lo que hacemos juntas y juntos.
-          </h2>
-          <p className="mt-5 text-base leading-8 text-foam/80 sm:text-lg">
-            No somos un directorio ni una embajada. Somos personas que se
-            eligen: para compartir un asado, resolver una duda o sentirse menos
-            lejos.
-          </p>
+            WhatsApp
+          </a>
+          <a
+            href={`mailto:${site.email}`}
+            className="text-chile-red underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-chile-red"
+          >
+            {site.email}
+          </a>
         </div>
-
-        <ul className="mt-12 grid gap-4 md:grid-cols-3">
-          {benefits.map((benefit) => (
-            <li
-              key={benefit.title}
-              className={`rounded-[1.6rem] border border-white/10 bg-white/6 p-6 ${benefit.span ?? ""}`}
-            >
-              <h3 className="font-display text-2xl tracking-tight">
-                {benefit.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-foam/75">{benefit.body}</p>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

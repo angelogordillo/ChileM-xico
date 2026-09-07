@@ -74,21 +74,25 @@ export function FlagPair({
 }: {
   className?: string;
   idPrefix: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   caption?: boolean;
   tone?: "light" | "dark";
 }) {
   const flagClass =
-    size === "lg"
-      ? "h-10 w-[3.75rem] sm:h-12 sm:w-[4.5rem]"
-      : size === "sm"
-        ? "h-6 w-9"
-        : "h-8 w-12";
+    size === "xl"
+      ? "h-16 w-24 sm:h-[4.5rem] sm:w-[6.75rem]"
+      : size === "lg"
+        ? "h-10 w-[3.75rem] sm:h-12 sm:w-[4.5rem]"
+        : size === "sm"
+          ? "h-5 w-[1.875rem]"
+          : "h-8 w-12";
   const ring = tone === "dark" ? "ring-1 ring-white/25" : "ring-1 ring-ink/10";
   const rule = tone === "dark" ? "bg-white/25" : "bg-ink/15";
 
+  const gap = size === "xl" ? "gap-5 sm:gap-7" : "gap-2.5";
+
   return (
-    <div className={`flex items-center gap-2.5 ${className ?? ""}`}>
+    <div className={`flex items-center ${gap} ${className ?? ""}`}>
       <figure className="flex items-center gap-2">
         <FlagChile
           idPrefix={`${idPrefix}-cl`}
@@ -116,14 +120,3 @@ export function FlagPair({
   );
 }
 
-export function DualFlagBars({ className }: { className?: string }) {
-  return (
-    <div
-      className={`flex h-1.5 w-full flex-col ${className ?? ""}`}
-      aria-hidden="true"
-    >
-      <div className="chile-bar h-1/2 w-full" />
-      <div className="mexico-bar h-1/2 w-full" />
-    </div>
-  );
-}
