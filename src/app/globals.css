@@ -3,6 +3,13 @@
 :root {
   --background: #f4ece0;
   --foreground: #1c1614;
+  --chile-red: #d52b1e;
+  --chile-red-deep: #b22218;
+  --chile-blue: #0039a6;
+  --mexico-green: #006847;
+  --mexico-green-deep: #005338;
+  --mexico-red: #ce1126;
+  --flag-white: #ffffff;
 }
 
 @theme inline {
@@ -13,12 +20,19 @@
   --color-foam: #fff8f0;
   --color-ink: #1c1614;
   --color-ink-soft: #5a4e46;
-  --color-wine: #9b1d2e;
-  --color-wine-deep: #7a1524;
-  --color-navy: #17324f;
-  --color-clay: #c4622d;
-  --color-gold: #c9a04a;
-  --color-forest: #2f6b4f;
+  --color-chile-red: var(--chile-red);
+  --color-chile-red-deep: var(--chile-red-deep);
+  --color-chile-blue: var(--chile-blue);
+  --color-mexico-green: var(--mexico-green);
+  --color-mexico-green-deep: var(--mexico-green-deep);
+  --color-mexico-red: var(--mexico-red);
+  --color-flag-white: var(--flag-white);
+  --color-wine: var(--chile-red);
+  --color-wine-deep: var(--chile-red-deep);
+  --color-navy: var(--chile-blue);
+  --color-forest: var(--mexico-green);
+  --color-clay: var(--mexico-red);
+  --color-gold: #f4ede0;
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
@@ -46,7 +60,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-wine) 22%, white);
+  background: color-mix(in srgb, var(--chile-red) 22%, white);
   color: var(--color-ink);
 }
 
@@ -54,12 +68,33 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 
+.chile-bar {
+  background: linear-gradient(
+    90deg,
+    var(--chile-blue) 0 33.33%,
+    var(--flag-white) 33.33% 66.66%,
+    var(--chile-red) 66.66%
+  );
+}
+
+.mexico-bar {
+  background: linear-gradient(
+    90deg,
+    var(--mexico-green) 0 33.33%,
+    var(--flag-white) 33.33% 66.66%,
+    var(--mexico-red) 66.66%
+  );
+}
+
 .tricolor {
   background: linear-gradient(
     90deg,
-    #9b1d2e 0 33.33%,
-    #fff8f0 33.33% 66.66%,
-    #17324f 66.66%
+    var(--chile-blue) 0 16.66%,
+    var(--flag-white) 16.66% 33.33%,
+    var(--chile-red) 33.33% 50%,
+    var(--mexico-green) 50% 66.66%,
+    var(--flag-white) 66.66% 83.33%,
+    var(--mexico-red) 83.33%
   );
 }
 

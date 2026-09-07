@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import { nav, site } from "@/data/site";
+import { DualFlagBars } from "./Flags";
 import { CloseIcon, LogoMark, MenuIcon } from "./Icons";
 
 export function Header() {
@@ -25,13 +26,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/8 bg-cream/80 backdrop-blur-xl">
-      <div className="tricolor h-1 w-full" aria-hidden="true" />
+      <DualFlagBars />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.25rem] sm:px-8">
         <a
           href="#inicio"
           className="flex items-center gap-3 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
         >
-          <LogoMark className="h-9 w-9" />
+          <LogoMark idPrefix="header-logo" className="h-8 w-12 sm:h-9 sm:w-[3.35rem]" />
           <span className="font-display text-lg tracking-tight text-ink sm:text-xl">
             {site.name}
           </span>

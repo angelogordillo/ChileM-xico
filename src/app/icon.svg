@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#9B1D2E"/>
-  <path d="M6 22.5 16 8.5 26 22.5H6Z" fill="#FFF8F0"/>
-  <circle cx="16" cy="11" r="3.1" fill="#C9A04A"/>
-  <rect x="6" y="24" width="20" height="2.2" rx="1" fill="#17324F"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32" fill="none">
+  <defs>
+    <clipPath id="icon-clip">
+      <rect width="48" height="32" rx="8"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#icon-clip)">
+    <rect width="24" height="32" fill="#D52B1E"/>
+    <rect width="24" height="16" fill="#FFFFFF"/>
+    <rect width="16" height="16" fill="#0039A6"/>
+    <polygon fill="#FFFFFF" points="8,4.1 9.15,7.65 12.9,7.65 9.88,9.85 11.03,13.4 8,11.2 4.97,13.4 6.12,9.85 3.1,7.65 6.85,7.65"/>
+    <rect x="24" width="8" height="32" fill="#006847"/>
+    <rect x="32" width="8" height="32" fill="#FFFFFF"/>
+    <rect x="40" width="8" height="32" fill="#CE1126"/>
+  </g>
 </svg>

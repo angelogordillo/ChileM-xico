@@ -1,23 +1,26 @@
 import { nav, site } from "@/data/site";
+import { DualFlagBars, FlagPair } from "./Flags";
 import { FacebookIcon, InstagramIcon, LogoMark } from "./Icons";
 
 export function Footer() {
   return (
     <footer className="border-t border-ink/8 bg-ink text-foam">
+      <DualFlagBars />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">
-            <LogoMark className="h-9 w-9" />
+            <LogoMark idPrefix="footer-logo" className="h-8 w-12" />
             <p className="font-display text-xl">{site.name}</p>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-7 text-foam/70">
             De Chile al corazón de México. Comunidad, eventos y una mesa con
             espacio de más.
           </p>
+          <FlagPair idPrefix="footer" size="sm" tone="dark" className="mt-5" />
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foam">
             Navegar
           </p>
           <ul className="mt-4 space-y-3">
@@ -25,7 +28,7 @@ export function Footer() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-sm text-foam/80 transition-colors hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                  className="text-sm text-foam/80 transition-colors hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foam"
                 >
                   {item.label}
                 </a>
@@ -35,7 +38,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foam">
             Redes
           </p>
           <ul className="mt-4 space-y-3">
@@ -44,7 +47,7 @@ export function Footer() {
                 href={site.social.instagram.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-flex items-center gap-2 text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foam"
               >
                 <InstagramIcon className="h-4 w-4" />
                 {site.social.instagram.label}
@@ -55,7 +58,7 @@ export function Footer() {
                 href={site.social.facebook.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-flex items-center gap-2 text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foam"
               >
                 <FacebookIcon className="h-4 w-4" />
                 {site.social.facebook.label}
@@ -64,7 +67,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${site.email}`}
-                className="text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="text-sm text-foam/80 hover:text-foam focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foam"
               >
                 {site.email}
               </a>

@@ -1,5 +1,6 @@
 import { featuredEvent } from "@/data/events";
 import { site } from "@/data/site";
+import { FlagPair } from "./Flags";
 import { ArrowIcon, PinIcon, SunMountains } from "./Icons";
 
 export function Hero() {
@@ -14,25 +15,26 @@ export function Hero() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-clay/15 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-mexico-green/12 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-wine/10 blur-3xl"
+        className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-chile-blue/12 blur-3xl"
         aria-hidden="true"
       />
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
         <div className="reveal">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-wine">
+          <FlagPair idPrefix="hero" size="lg" caption className="mb-6" />
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-chile-red">
             Comunidad chilena en México
           </p>
           <h1
             id="hero-title"
             className="font-display text-[2.75rem] leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl"
           >
-            Chile en{" "}
-            <em className="font-display italic text-wine">México</em>
+            <span className="text-chile-red">Chile</span> en{" "}
+            <em className="font-display italic text-mexico-green">México</em>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft sm:text-xl">
             {site.tagline} Asados, onces, Fiestas Patrias y una red para

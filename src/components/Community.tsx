@@ -31,7 +31,7 @@ export function Community() {
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
         <div className="max-w-2xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-foam">
             Comunidad
           </p>
           <h2

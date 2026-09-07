@@ -4,7 +4,7 @@ import { LogoMark } from "@/components/Icons";
 export default function NotFound() {
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center bg-cream px-6 text-center">
-      <LogoMark className="h-12 w-12" />
+      <LogoMark idPrefix="not-found-logo" className="h-12 w-[4.5rem]" />
       <h1 className="mt-8 font-display text-4xl tracking-tight text-ink">
         Esta página no está.
       </h1>

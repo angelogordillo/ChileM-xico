@@ -14,24 +14,28 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background: "#f4ece0",
-          padding: "72px",
+          padding: "64px 72px",
         }}
       >
-        <div
-          style={{
-            height: 10,
-            width: "100%",
-            display: "flex",
-            background: "linear-gradient(90deg, #9b1d2e 0 33%, #fff8f0 33% 66%, #17324f 66%)",
-          }}
-        />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", height: 14, width: "100%" }}>
+            <div style={{ flex: 1, background: "#0039A6" }} />
+            <div style={{ flex: 1, background: "#FFFFFF" }} />
+            <div style={{ flex: 1, background: "#D52B1E" }} />
+          </div>
+          <div style={{ display: "flex", height: 14, width: "100%" }}>
+            <div style={{ flex: 1, background: "#006847" }} />
+            <div style={{ flex: 1, background: "#FFFFFF" }} />
+            <div style={{ flex: 1, background: "#CE1126" }} />
+          </div>
+        </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               fontSize: 28,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#9b1d2e",
+              color: "#D52B1E",
               marginBottom: 20,
             }}
           >
@@ -43,9 +47,12 @@ export default function OpenGraphImage() {
               lineHeight: 1,
               color: "#1c1614",
               fontWeight: 600,
+              display: "flex",
             }}
           >
-            Chile en México
+            <span style={{ color: "#D52B1E" }}>Chile</span>
+            <span style={{ margin: "0 18px" }}>en</span>
+            <span style={{ color: "#006847" }}>México</span>
           </div>
           <div
             style={{
@@ -58,8 +65,20 @@ export default function OpenGraphImage() {
             Comunidad, encuentros y un pedacito de casa.
           </div>
         </div>
-        <div style={{ fontSize: 24, color: "#17324f" }}>
-          Eventos · Amistad · Bienvenida
+        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+          <div style={{ display: "flex", width: 72, height: 48 }}>
+            <div style={{ width: 24, height: 48, background: "#0039A6" }} />
+            <div style={{ width: 24, height: 48, background: "#FFFFFF" }} />
+            <div style={{ width: 24, height: 48, background: "#D52B1E" }} />
+          </div>
+          <div style={{ display: "flex", width: 72, height: 48 }}>
+            <div style={{ width: 24, height: 48, background: "#006847" }} />
+            <div style={{ width: 24, height: 48, background: "#FFFFFF" }} />
+            <div style={{ width: 24, height: 48, background: "#CE1126" }} />
+          </div>
+          <div style={{ fontSize: 24, color: "#0039A6" }}>
+            Eventos · Amistad · Bienvenida
+          </div>
         </div>
       </div>
     ),
