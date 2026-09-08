@@ -8,33 +8,19 @@ export type Noticia = {
 };
 
 /**
- * Notas de comunidad. Reemplaza estos textos de ejemplo por noticias reales.
- * Si hay url, se muestra como enlace externo; si no, solo el resumen.
+ * Notas de comunidad y Chile–México.
+ * Si hay url, se muestra como enlace externo.
  */
 export const noticias: Noticia[] = [
   {
-    id: "fiestas-patrias-cdmx",
-    title: "Fiestas Patrias: la comunidad se junta en la CDMX",
-    date: "2026-09-18",
+    id: "encuentro-gastronomico-austral-mexico",
+    title:
+      "Los Lagos fortalece su presencia acuícola en México con el Encuentro Gastronómico Austral",
+    date: "2026-09-07",
     summary:
-      "Un 18 para encontrarnos: empanadas, cueca y mesa larga. Fecha y lugar se confirman en esta sección cuando estén listos.",
-    source: "Chile en México",
-  },
-  {
-    id: "directorio-empresas",
-    title: "El directorio de empresas chilenas sigue creciendo",
-    date: "2026-08-20",
-    summary:
-      "Más compañías con presencia en México aparecen en Empresas. El listado se actualiza de a poco, con datos públicos.",
-    source: "Chile en México",
-  },
-  {
-    id: "rincon-de-chile",
-    title: "Un Rincón de Chile, mesa de siempre en la ciudad",
-    date: "2026-07-08",
-    summary:
-      "El restaurante sigue siendo un punto de encuentro para extrañar menos la casa. El enlace está en Comunidad.",
-    source: "Chile en México",
+      "ProChile reunió en Ciudad de México a exportadores de Los Lagos —salmón, mejillón, jibia, merluza y caviar— con importadores, hoteles y restaurantes, para abrir más espacio a los productos del mar chilenos en la gastronomía mexicana.",
+    source: "Portal Innova",
+    url: "https://portalinnova.cl/los-lagos-fortalece-su-presencia-acuicola-en-mexico-con-el-encuentro-gastronomico-austral/",
   },
 ];
 
