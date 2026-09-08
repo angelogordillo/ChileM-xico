@@ -1,9 +1,17 @@
+import Image from "next/image";
+
 type FlagProps = {
   className?: string;
-  idPrefix: string;
+  idPrefix?: string;
 };
 
-export function FlagChile({ className, idPrefix }: FlagProps) {
+const mexicoFlag = {
+  src: "/flags/mexico.png",
+  width: 1920,
+  height: 1098,
+} as const;
+
+export function FlagChile({ className, idPrefix = "cl" }: FlagProps) {
   const clipId = `${idPrefix}-chile-clip`;
 
   return (
@@ -12,6 +20,7 @@ export function FlagChile({ className, idPrefix }: FlagProps) {
       className={className}
       role="img"
       aria-label="Bandera de Chile"
+      style={{ aspectRatio: "3 / 2" }}
     >
       <defs>
         <clipPath id={clipId}>
@@ -31,39 +40,37 @@ export function FlagChile({ className, idPrefix }: FlagProps) {
   );
 }
 
-export function FlagMexico({ className, idPrefix }: FlagProps) {
-  const clipId = `${idPrefix}-mexico-clip`;
-
+export function FlagMexico({
+  className,
+  sizes = "(min-width: 640px) 130px, 112px",
+  priority = false,
+}: FlagProps & { sizes?: string; priority?: boolean }) {
   return (
-    <svg
-      viewBox="0 0 36 24"
+    <Image
+      src={mexicoFlag.src}
+      alt="Bandera de México"
+      width={mexicoFlag.width}
+      height={mexicoFlag.height}
+      sizes={sizes}
+      priority={priority}
       className={className}
-      role="img"
-      aria-label="Bandera de México"
-    >
-      <defs>
-        <clipPath id={clipId}>
-          <rect width="36" height="24" rx="2.4" />
-        </clipPath>
-      </defs>
-      <g clipPath={`url(#${clipId})`}>
-        <rect width="36" height="24" fill="#FFFFFF" />
-        <rect width="12" height="24" fill="#006847" />
-        <rect x="24" width="12" height="24" fill="#CE1126" />
-        <g transform="translate(18 13)">
-          <rect x="-0.7" y="0.2" width="1.4" height="5.4" fill="#006847" />
-          <ellipse cx="0" cy="-0.4" rx="2.1" ry="2.3" fill="#006847" />
-          <ellipse cx="-2.3" cy="0.7" rx="1.35" ry="1.7" fill="#006847" />
-          <ellipse cx="2.3" cy="0.7" rx="1.35" ry="1.7" fill="#006847" />
-          <path
-            fill="#5C3A1E"
-            d="M0-4.6c1.4.2 2.4 1.4 2.6 2.6.4 0 1.5.3 1.7 1.1-.9.3-1.6.2-2.1 0 .2.8.1 1.6-.3 2.2l1.6 1.1c.1.6-.3 1-1 .8L1.2 2.2c-.3.7-.8 1.2-1.2 1.5-.4-.3-.9-.8-1.2-1.5L-2.5 3.2c-.7.2-1.1-.2-1-.8l1.6-1.1c-.4-.6-.5-1.4-.3-2.2-.5.2-1.2.3-2.1 0 .2-.8 1.3-1.1 1.7-1.1.2-1.2 1.2-2.4 2.6-2.6Z"
-          />
-        </g>
-      </g>
-    </svg>
+    />
   );
 }
+
+const heightClass = {
+  sm: "h-5",
+  md: "h-8",
+  lg: "h-10 sm:h-12",
+  xl: "h-16 sm:h-[4.5rem]",
+} as const;
+
+const mexicoSizes = {
+  sm: "36px",
+  md: "56px",
+  lg: "(min-width: 640px) 84px, 70px",
+  xl: "(min-width: 640px) 130px, 112px",
+} as const;
 
 export function FlagPair({
   className,
@@ -71,33 +78,29 @@ export function FlagPair({
   size = "md",
   caption = false,
   tone = "light",
+  priority = false,
 }: {
   className?: string;
   idPrefix: string;
   size?: "sm" | "md" | "lg" | "xl";
   caption?: boolean;
   tone?: "light" | "dark";
+  priority?: boolean;
 }) {
-  const flagClass =
-    size === "xl"
-      ? "h-16 w-24 sm:h-[4.5rem] sm:w-[6.75rem]"
-      : size === "lg"
-        ? "h-10 w-[3.75rem] sm:h-12 sm:w-[4.5rem]"
-        : size === "sm"
-          ? "h-5 w-[1.875rem]"
-          : "h-8 w-12";
+  const frame = heightClass[size];
   const ring = tone === "dark" ? "ring-1 ring-white/25" : "ring-1 ring-ink/10";
   const rule = tone === "dark" ? "bg-white/25" : "bg-ink/15";
-
   const gap = size === "xl" ? "gap-5 sm:gap-7" : "gap-2.5";
 
   return (
     <div className={`flex items-center ${gap} ${className ?? ""}`}>
       <figure className="flex items-center gap-2">
-        <FlagChile
-          idPrefix={`${idPrefix}-cl`}
-          className={`${flagClass} ${ring}`}
-        />
+        <span className={`${frame} inline-flex overflow-hidden rounded-[2px] ${ring}`}>
+          <FlagChile
+            idPrefix={`${idPrefix}-cl`}
+            className="h-full w-auto"
+          />
+        </span>
         {caption ? (
           <figcaption className="hidden text-xs font-semibold uppercase tracking-[0.16em] text-chile-blue sm:block">
             Chile
@@ -109,10 +112,13 @@ export function FlagPair({
         aria-hidden="true"
       />
       <figure className="flex items-center gap-2">
-        <FlagMexico
-          idPrefix={`${idPrefix}-mx`}
-          className={`${flagClass} ${ring}`}
-        />
+        <span className={`${frame} inline-flex overflow-hidden rounded-[2px] ${ring}`}>
+          <FlagMexico
+            className="h-full w-auto max-w-none"
+            sizes={mexicoSizes[size]}
+            priority={priority}
+          />
+        </span>
         {caption ? (
           <figcaption className="hidden text-xs font-semibold uppercase tracking-[0.16em] text-mexico-green sm:block">
             México
@@ -122,4 +128,3 @@ export function FlagPair({
     </div>
   );
 }
-

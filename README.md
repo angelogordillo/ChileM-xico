@@ -30,8 +30,9 @@ npm run lint    # ESLint
 
 | Archivo | Qué cambia |
 | --- | --- |
-| `src/data/site.ts` | Nombre, tagline, correo y WhatsApp |
+| `src/data/site.ts` | Nombre y tagline |
 | `src/data/empresas.ts` | Directorio de empresas (nombre, sector, presencia, ciudad, sitio, correo, teléfono) |
+| `public/flags/mexico.png` | Bandera oficial de México (escudo completo) |
 
 El directorio es un listado inicial de 35 empresas. Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
 
@@ -46,4 +47,4 @@ NEXT_PUBLIC_SITE_URL=https://tu-dominio.com
 1. Sube el repositorio a GitHub.
 2. Impórtalo en [Vercel](https://vercel.com) (u otro host compatible con Next.js).
 3. Framework preset: **Next.js**. Build: `npm run build`.
-4. Configura `NEXT_PUBLIC_SITE_URL` y actualiza los placeholders en `src/data/site.ts`.
+4. Configura `NEXT_PUBLIC_SITE_URL` con el dominio final.

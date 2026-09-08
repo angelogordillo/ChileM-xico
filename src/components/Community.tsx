@@ -1,5 +1,3 @@
-import { site } from "@/data/site";
-
 export function Community() {
   return (
     <section
@@ -23,22 +21,6 @@ export function Community() {
           culturas. Nos escribimos, nos recomendamos y nos juntamos cuando hay
           ganas de mesa compartida.
         </p>
-        <div className="mt-10 flex flex-col gap-3 text-sm sm:flex-row sm:gap-8">
-          <a
-            href={site.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-mexico-green underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mexico-green"
-          >
-            WhatsApp
-          </a>
-          <a
-            href={`mailto:${site.email}`}
-            className="text-chile-red underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-chile-red"
-          >
-            {site.email}
-          </a>
-        </div>
       </div>
     </section>
   );
