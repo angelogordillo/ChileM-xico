@@ -2,6 +2,7 @@ export type Noticia = {
   id: string;
   title: string;
   date: string;
+  dateLabel?: string;
   summary: string;
   source?: string;
   url?: string;
@@ -15,21 +16,27 @@ export const noticias: Noticia[] = [
   {
     id: "encuentro-gastronomico-austral-mexico",
     title:
-      "Los Lagos fortalece su presencia acuícola en México con el Encuentro Gastronómico Austral",
-    date: "2026-09-07",
+      "Los Lagos fortalece su presencia acuícola en México con el “Encuentro Gastronómico Austral”",
+    date: "2026-09",
+    dateLabel: "septiembre 2026",
     summary:
-      "ProChile reunió en Ciudad de México a exportadores de Los Lagos —salmón, mejillón, jibia, merluza y caviar— con importadores, hoteles y restaurantes, para abrir más espacio a los productos del mar chilenos en la gastronomía mexicana.",
+      "ProChile impulsó en Ciudad de México el Encuentro Gastronómico Austral con empresas de Los Lagos (salmón, mejillones y otros productos del mar) ante importadores, hotelería y gastronomía.",
     source: "Portal Innova",
     url: "https://portalinnova.cl/los-lagos-fortalece-su-presencia-acuicola-en-mexico-con-el-encuentro-gastronomico-austral/",
   },
 ];
 
-export function formatNoticiaDate(isoDate: string): string {
-  const [year, month, day] = isoDate.split("-").map(Number);
-  return new Intl.DateTimeFormat("es-MX", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(Date.UTC(year, month - 1, day)));
+export function formatNoticiaDate(isoDate: string, dateLabel?: string): string {
+  if (dateLabel) return dateLabel;
+
+  const parts = isoDate.split("-").map(Number);
+  const [year, month, day] = parts;
+  const options: Intl.DateTimeFormatOptions =
+    parts.length >= 3
+      ? { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }
+      : { month: "long", year: "numeric", timeZone: "UTC" };
+
+  return new Intl.DateTimeFormat("es-MX", options).format(
+    new Date(Date.UTC(year, month - 1, day ?? 1)),
+  );
 }

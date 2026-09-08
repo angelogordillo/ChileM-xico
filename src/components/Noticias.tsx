@@ -31,7 +31,7 @@ export function Noticias() {
                 <article className="py-8">
                   <p className="text-xs uppercase tracking-[0.14em] text-ink-soft">
                     <time dateTime={noticia.date}>
-                      {formatNoticiaDate(noticia.date)}
+                      {formatNoticiaDate(noticia.date, noticia.dateLabel)}
                     </time>
                     {noticia.source ? ` · ${noticia.source}` : null}
                   </p>
