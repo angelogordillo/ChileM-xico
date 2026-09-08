@@ -27,7 +27,7 @@ export function telHref(value: string): string {
 }
 
 /**
- * Directorio inicial de empresas chilenas con presencia en México.
+ * Empresas chilenas con presencia en México.
  * Fuentes públicas; contactos exactos del listado investigado.
  * No inventar datos: si email o teléfono es "no público", no se muestra.
  */
