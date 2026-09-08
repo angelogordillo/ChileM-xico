@@ -9,7 +9,7 @@ export function Intro() {
       aria-labelledby="intro-title"
     >
       <div className="mx-auto flex max-w-2xl flex-col items-center px-2 py-24 text-center sm:py-32">
-        <FlagPair idPrefix="intro" size="xl" />
+        <FlagPair idPrefix="intro" size="xl" priority />
         <h1
           id="intro-title"
           className="mt-10 font-display text-4xl tracking-tight text-ink sm:text-5xl"
