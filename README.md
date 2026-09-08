@@ -34,7 +34,7 @@ npm run lint    # ESLint
 | `src/data/empresas.ts` | Directorio de empresas (nombre, sector, presencia, ciudad, sitio, correo, teléfono) |
 | `public/flags/mexico.png` | Bandera oficial de México (escudo completo) |
 
-El directorio es un listado inicial de 35 empresas. Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
+Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
 
 Opcional: define la URL canónica del sitio.
 

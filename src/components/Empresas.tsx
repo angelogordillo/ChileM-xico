@@ -27,11 +27,6 @@ export function Empresas() {
           >
             Empresas chilenas en México.
           </h2>
-          <p className="mt-6 text-base leading-8 text-ink-soft">
-            Un directorio inicial de {empresas.length} empresas. ProChile cita
-            cerca de 100 compañías chilenas con presencia en México; este
-            listado no es exhaustivo.
-          </p>
         </div>
 
         {empresas.length === 0 ? (

@@ -1,3 +1,5 @@
+import { site } from "@/data/site";
+
 export function Community() {
   return (
     <section
@@ -21,6 +23,23 @@ export function Community() {
           culturas. Nos escribimos, nos recomendamos y nos juntamos cuando hay
           ganas de mesa compartida.
         </p>
+        <div className="mt-10">
+          <p className="font-display text-xl tracking-tight text-ink">
+            {site.rinconDeChile.name}
+          </p>
+          <p className="mt-2 text-sm leading-7 text-ink-soft">
+            Restaurante chileno en México: un lugar para comer rico y sentirse
+            un poco más en casa.
+          </p>
+          <a
+            href={site.rinconDeChile.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm text-chile-red underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-chile-red"
+          >
+            unrincondechile.com.mx
+          </a>
+        </div>
       </div>
     </section>
   );

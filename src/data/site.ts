@@ -5,6 +5,10 @@ export const site = {
     "Chile en México reúne a la comunidad chilena y un directorio de empresas chilenas con presencia en México.",
   locale: "es-MX",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://chileenmexico.example",
+  rinconDeChile: {
+    name: "Un Rincón de Chile",
+    href: "http://www.unrincondechile.com.mx/index.html",
+  },
 } as const;
 
 export const nav = [
