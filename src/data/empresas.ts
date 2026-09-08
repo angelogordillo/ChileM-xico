@@ -407,6 +407,17 @@ export const empresas: Empresa[] = [
     cityMx: "Ciudad de México",
   },
   {
+    id: "the-wild-foods-mexico",
+    name: "The Wild Foods México",
+    sector: "Alimentos / snacks saludables (e-commerce)",
+    presence: "Tienda online en México (Wild Foods Mexico)",
+    website: "https://www.thewildfoods.com.mx/",
+    email: "no público",
+    phone: "no público",
+    contactUrl: "https://www.thewildfoods.com.mx/",
+    cityMx: "México (e-commerce nacional)",
+  },
+  {
     id: "masisa",
     name: "Masisa",
     sector: "Tableros y soluciones de madera.",
