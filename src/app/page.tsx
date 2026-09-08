@@ -3,6 +3,7 @@ import { Empresas } from "@/components/Empresas";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Intro } from "@/components/Intro";
+import { Noticias } from "@/components/Noticias";
 import { site } from "@/data/site";
 
 const jsonLd = {
@@ -32,6 +33,7 @@ export default function Home() {
         <Intro />
         <Community />
         <Empresas />
+        <Noticias />
       </main>
       <Footer />
     </>

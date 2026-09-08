@@ -32,6 +32,7 @@ npm run lint    # ESLint
 | --- | --- |
 | `src/data/site.ts` | Nombre y tagline |
 | `src/data/empresas.ts` | Directorio de empresas (nombre, sector, presencia, ciudad, sitio, correo, teléfono) |
+| `src/data/noticias.ts` | Notas de comunidad (título, fecha, resumen, enlace opcional) |
 | `public/flags/mexico.png` | Bandera oficial de México (escudo completo) |
 
 Si `email` o `phone` valen exactamente `no público`, no se muestran en la interfaz.
